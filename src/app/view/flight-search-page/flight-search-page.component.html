@@ -1,0 +1,41 @@
+<form xmlns="http://www.w3.org/1999/html">
+  <label for="departure">Select Departure:</label>
+  <select id="departure" name="departure" [(ngModel)]="departure">
+    <option value="1">kansas, USA</option>
+    <option value="2">hyderabad, INDIA</option>
+    <option value="3">toronto, CANADA</option>
+    <option value="4">london, ENGLAND</option>
+  </select>
+
+  <br>
+
+  <label for="arrival">Select Arrival:</label>
+  <select id="arrival" name="arrival" [(ngModel)]="arrival">
+    <option value="1">kansas, USA</option>
+    <option value="2">hyderabad, INDIA</option>
+    <option value="3">toronto, CANADA</option>
+    <option value="4">london, ENGLAND</option>
+  </select>
+
+  <br>
+  <label for="departureDate">Select Departure Date:</label>
+  <input type="date" id="departureDate" name="departureDate" [(ngModel)]="departureDate">
+  <br>
+
+  <button type="button" (click)="submit()">Submit</button>
+</form>
+<div *ngIf="flightDetails; else noData">
+  <!-- Display the content when responseData contains data -->
+  <p>Response Data:</p>
+ <span> <ul>
+    <li *ngFor="let flight of f">
+      <p>airlineEntityName: {{ flight.airlineId}}</p>
+      <button type="button" (click)="selectFlight(flight)">Select</button>
+    </li>
+  </ul></span>
+</div>
+
+<ng-template #noData>
+  <!-- Display the content when responseData is null (no data available) -->
+  <p>No data available.</p>
+</ng-template>

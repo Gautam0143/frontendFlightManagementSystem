@@ -1,0 +1,27 @@
+<p>booking-page works!</p>
+<form #addData="ngForm" (ngSubmit)="submit(addData.value)" >
+
+  <h1 style="text-align:center;">Sign Up</h1>
+  <p style="text-align:center;">Please fill in this form to create an account.</p>
+  <hr>
+
+  <label ><b>first Name</b></label>
+  <input type="text" placeholder="Enter first name" name="firstName" required [(ngModel)]="booking.firstName">
+
+  <label ><b>last Name</b></label>
+  <input type="text" placeholder="Enter last name" name="lastName" required [(ngModel)]="booking.lastName">
+
+  <label ><b>Phone number</b></label>
+  <input type="text" placeholder="enter phone number" name="phone" required [(ngModel)]="booking.phone">
+  <label ><b>Email</b></label>
+  <input type="text" placeholder="enter email" name="email" required [(ngModel)]="booking.email">
+
+  <br><br>
+
+
+  <div class="clearfix">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <button type="submit" class="signupbtn">Sign Up</button>
+  </div>
+
+</form>

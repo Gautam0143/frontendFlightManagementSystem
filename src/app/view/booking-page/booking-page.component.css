@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Style the mat-form-field elements */
+mat-form-field {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 10px 0;
+}
+
+/* Style the mat-label elements */
+mat-label {
+  font-size: 16px;
+  color: #333; /* Change the color as needed */
+}
+
+/* Style the mat-input elements */
+mat-input {
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Add a border for a better visual */
+  border-radius: 4px;
+}
+
+/* Style the input placeholders */
+::placeholder {
+  color: #999; /* Customize the placeholder color */
+}
