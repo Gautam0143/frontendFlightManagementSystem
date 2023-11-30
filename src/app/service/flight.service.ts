@@ -8,18 +8,18 @@ import {Booking} from 'src/app/model/booking';
 export class FlightService {
 
   constructor(private http: HttpClient) { }
-  private flightBaseUrl = 'http://localhost:6006';
+  private flightBaseUrl = 'https://frontendflightproject.uc.r.appspot.com';
      public getData(departure: Number, arrival: Number,departureDate:Date): Observable<any> {
          // Use template literals to interpolate variables into the URL string
 //          const formattedDate = `${departureDate.getFullYear()}-${(departureDate.getMonth() + 1).toString().padStart(2, '0')}-${departureDate.getDate().toString().padStart(2, '0')}`;
          return this.http.get<any>(`${this.flightBaseUrl}/showflightDetailsBasedOnDepartureAndArrivalAndDepartureTime?departure=${departure}&arrival=${arrival}&departureDate=${departureDate}`);
        }
 
-       private bookingBaseUrl='http://localhost:6006';
+       private bookingBaseUrl='https://frontendflightproject.uc.r.appspot.com';
        public getBookingData(booking:Booking): Observable<any> {
                 // Use template literals to interpolate variables into the URL string
        //          const formattedDate = `${departureDate.getFullYear()}-${(departureDate.getMonth() + 1).toString().padStart(2, '0')}-${departureDate.getDate().toString().padStart(2, '0')}`;
-                return this.http.post<any>('http://localhost:6006/saveBooking' , booking);
+                return this.http.post<any>('https://frontendflightproject.uc.r.appspot.com/saveBooking' , booking);
                 console.log(booking);
               }
 }
